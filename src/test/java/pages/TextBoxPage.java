@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TextBoxPage {
-    TextBoxCheckResultComponent checkResult = new TextBoxCheckResultComponent();
+
     SelenideElement userNameInput = $("#userName"),
             userEmailInput = $("#userEmail"),
             currentAddressInput = $("#currentAddress"),
