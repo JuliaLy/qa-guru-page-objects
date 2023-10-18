@@ -15,6 +15,8 @@ public class RegistrationPageTests extends TestBase{
             .setGender("Female")
             .setUserNumber("1234567890")
             .setDateOfBirth("20","July", "1991")
+            .setSubject("English")
+            .selectHobby("Sports")
             .uploadImage("AAOV9ga.jpg")
             .setAddress("Test street, 12B")
             .setState("NCR")
@@ -26,6 +28,8 @@ public class RegistrationPageTests extends TestBase{
             .checkResultTable("Female")
             .checkResultTable("1234567890")
             .checkResultTable("20 " + "July," + "1991")
+            .checkResultTable("English")
+            .checkResultTable("Sports")
             .checkResultTable("AAOV9ga.jpg")
             .checkResultTable("Test street, 12B")
             .checkResultTable("NCR " +"Delhi" );
