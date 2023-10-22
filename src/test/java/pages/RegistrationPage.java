@@ -29,9 +29,12 @@ public class RegistrationPage {
             cityWrapper = $(("#stateCity-wrapper")),
             submitButton = $("#submit");
 
-    public RegistrationPage openPage(String pageAddress) {
-        open(pageAddress);
+    public RegistrationPage openPage( ) {
+        open("/automation-practice-form");
         titleLabel.shouldHave(text("Student Registration Form"));
+        return this;
+    }
+    public RegistrationPage hideBanner(){
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;

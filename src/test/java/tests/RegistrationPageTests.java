@@ -5,33 +5,34 @@ import pages.RegistrationPage;
 
 public class RegistrationPageTests extends TestBase{
     RegistrationPage regPage = new RegistrationPage();
+    TestData testData=new TestData();
 
 @Test
     void successfulRegistrationTest(){
-    regPage.openPage("/automation-practice-form")
-            .setFirstName("Julia")
-            .setLastName("Lysakova")
-            .setUserEmail("ulyaro@mail.ru")
-            .setGender("Female")
-            .setUserNumber("1234567890")
-            .setDateOfBirth("20","July", "1991")
-            .setSubject("English")
-            .selectHobby("Sports")
-            .uploadImage("AAOV9ga.jpg")
-            .setAddress("Test street, 12B")
-            .setState("NCR")
-            .setCity("Delhi")
+    regPage.openPage()
+            .hideBanner()
+            .setFirstName(testData.randomName)
+            .setLastName(testData.randomLastName)
+            .setUserEmail(testData.randomEmail)
+            .setGender(testData.randomGender)
+            .setUserNumber(testData.randomNumber)
+            .setDateOfBirth(testData.randomDay, testData.randomMonth, testData.randomYear)
+            .setSubject(testData.randomSubject)
+            .selectHobby(testData.randomHobbi)
+            .uploadImage(testData.randomPicture)
+            .setAddress(testData.randomAdress)
+            .setState(testData.randomState)
+            .setCity(testData.randomStateCity)
             .clickSubmitButton()
-            .checkResultTable("Julia")
-            .checkResultTable("Lysakova")
-            .checkResultTable("ulyaro@mail.ru")
-            .checkResultTable("Female")
-            .checkResultTable("1234567890")
-            .checkResultTable("20 " + "July," + "1991")
-            .checkResultTable("English")
-            .checkResultTable("Sports")
-            .checkResultTable("AAOV9ga.jpg")
-            .checkResultTable("Test street, 12B")
-            .checkResultTable("NCR " +"Delhi" );
+            .checkResultTable(testData.randomName+ " " +testData.randomLastName)
+            .checkResultTable(testData.randomEmail)
+            .checkResultTable(testData.randomGender)
+            .checkResultTable(testData.randomNumber)
+            .checkResultTable(testData.randomDay+ " " +testData.randomMonth+ "," +testData.randomYear)
+            .checkResultTable(testData.randomSubject)
+            .checkResultTable(testData.randomHobbi)
+            .checkResultTable(testData.randomPicture)
+            .checkResultTable(testData.randomAdress)
+            .checkResultTable(testData.randomState+" "+testData.randomStateCity);
 }
 }
