@@ -1,5 +1,7 @@
 package tests;
 
+import io.qameta.allure.selenide.AllureSelenide;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
@@ -9,6 +11,7 @@ public class RegistrationPageTests extends TestBase{
 
 @Test
     void successfulRegistrationTest(){
+    SelenideLogger.addListener("allure", new AllureSelenide());
     regPage.openPage()
             .hideBanner()
             .setFirstName(testData.randomName)
