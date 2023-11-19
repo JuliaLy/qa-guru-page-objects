@@ -2,6 +2,7 @@ package tests;
 
 import io.qameta.allure.selenide.AllureSelenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
@@ -10,6 +11,7 @@ public class RegistrationPageTests extends TestBase{
     TestData testData=new TestData();
 
 @Test
+@Tag("simple")
     void successfulRegistrationTest(){
     SelenideLogger.addListener("allure", new AllureSelenide());
     regPage.openPage()
